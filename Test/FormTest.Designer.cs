@@ -35,6 +35,10 @@
             this.controlListOfValues = new ClassLibraryControlSelected.ControlListOfValues();
             this.textBoxMainString = new System.Windows.Forms.TextBox();
             this.buttonWork = new System.Windows.Forms.Button();
+            this.textBoxChange = new System.Windows.Forms.TextBox();
+            this.labelMain = new System.Windows.Forms.Label();
+            this.buttonCH = new System.Windows.Forms.Button();
+            this.labelChange = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonChange
@@ -77,33 +81,71 @@
             // 
             this.controlListOfValues.Location = new System.Drawing.Point(754, 12);
             this.controlListOfValues.Name = "controlListOfValues";
-            this.controlListOfValues.Size = new System.Drawing.Size(189, 165);
+            this.controlListOfValues.Size = new System.Drawing.Size(257, 169);
             this.controlListOfValues.TabIndex = 5;
             this.controlListOfValues.ListBoxSelectedElementChange += new System.EventHandler(this.controlListOfValues_ListBoxSelectedElementChange);
             // 
             // textBoxMainString
             // 
-            this.textBoxMainString.Location = new System.Drawing.Point(837, 166);
+            this.textBoxMainString.Location = new System.Drawing.Point(839, 142);
             this.textBoxMainString.Name = "textBoxMainString";
             this.textBoxMainString.Size = new System.Drawing.Size(149, 20);
             this.textBoxMainString.TabIndex = 6;
-            this.textBoxMainString.Text = "выводить свойства {2 1}";
             // 
             // buttonWork
             // 
-            this.buttonWork.Location = new System.Drawing.Point(719, 221);
+            this.buttonWork.Location = new System.Drawing.Point(706, 207);
             this.buttonWork.Name = "buttonWork";
-            this.buttonWork.Size = new System.Drawing.Size(193, 24);
+            this.buttonWork.Size = new System.Drawing.Size(138, 24);
             this.buttonWork.TabIndex = 7;
             this.buttonWork.Text = "Добавить свойства";
             this.buttonWork.UseVisualStyleBackColor = true;
             this.buttonWork.Click += new System.EventHandler(this.buttonWork_Click);
+            // 
+            // textBoxChange
+            // 
+            this.textBoxChange.Location = new System.Drawing.Point(839, 165);
+            this.textBoxChange.Name = "textBoxChange";
+            this.textBoxChange.Size = new System.Drawing.Size(149, 20);
+            this.textBoxChange.TabIndex = 8;
+            // 
+            // labelMain
+            // 
+            this.labelMain.AutoSize = true;
+            this.labelMain.Location = new System.Drawing.Point(731, 142);
+            this.labelMain.Name = "labelMain";
+            this.labelMain.Size = new System.Drawing.Size(102, 13);
+            this.labelMain.TabIndex = 9;
+            this.labelMain.Text = "Шаблонная строка";
+            // 
+            // buttonCH
+            // 
+            this.buttonCH.Location = new System.Drawing.Point(870, 207);
+            this.buttonCH.Name = "buttonCH";
+            this.buttonCH.Size = new System.Drawing.Size(75, 23);
+            this.buttonCH.TabIndex = 10;
+            this.buttonCH.Text = "изменить";
+            this.buttonCH.UseVisualStyleBackColor = true;
+            this.buttonCH.Click += new System.EventHandler(this.buttonCH_Click);
+            // 
+            // labelChange
+            // 
+            this.labelChange.AutoSize = true;
+            this.labelChange.Location = new System.Drawing.Point(775, 168);
+            this.labelChange.Name = "labelChange";
+            this.labelChange.Size = new System.Drawing.Size(58, 13);
+            this.labelChange.TabIndex = 11;
+            this.labelChange.Text = "Изменить";
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 282);
+            this.Controls.Add(this.labelChange);
+            this.Controls.Add(this.buttonCH);
+            this.Controls.Add(this.labelMain);
+            this.Controls.Add(this.textBoxChange);
             this.Controls.Add(this.buttonWork);
             this.Controls.Add(this.textBoxMainString);
             this.Controls.Add(this.controlListOfValues);
@@ -127,6 +169,10 @@
         private ClassLibraryControlSelected.ControlListOfValues controlListOfValues;
         private System.Windows.Forms.TextBox textBoxMainString;
         private System.Windows.Forms.Button buttonWork;
+        private System.Windows.Forms.TextBox textBoxChange;
+        private System.Windows.Forms.Label labelMain;
+        private System.Windows.Forms.Button buttonCH;
+        private System.Windows.Forms.Label labelChange;
     }
 }
 

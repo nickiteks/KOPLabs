@@ -17,7 +17,7 @@ namespace Test
             get { return _selectedIndex; }
             set
             {
-              
+                _selectedIndex = value;
             }
         }
 
@@ -26,7 +26,7 @@ namespace Test
             get { return _selectedValue; }
             set
             {
-
+                _selectedValue = value;
             }
         }
     }

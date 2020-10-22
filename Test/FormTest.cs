@@ -12,11 +12,16 @@ namespace Test
 {
     public partial class FormTest : Form
     {
+        string[] values = { "Значение 1", "Значение 2", "Значение 3", "Значение 4", "Значение 5" };
+        Class1 cl = new Class1();
         public FormTest()
         {
             InitializeComponent();
             controlComboBoxSelected.LoadEnumeration(typeof(TestEnum));
-            controlListBox.LoadEnumeration(typeof(TestEnum));
+            foreach(string str in values)
+            {
+                controlListBox.Items.Add(str);
+            }
             controlPhoneNumberCheck.setColor = Color.Red;
         }
 
@@ -37,7 +42,10 @@ namespace Test
 
         private void controlPhoneNumberCheck_NumberWrite(object sender, EventArgs e)
         {
-            controlPhoneNumberCheck.CheckNumber();
+            if(controlPhoneNumberCheck.GetNumber()!= "")
+            {
+                MessageBox.Show(controlPhoneNumberCheck.GetNumber());
+            }
         }
 
         private void controlListOfValues_ListBoxSelectedElementChange(object sender, EventArgs e)
@@ -48,8 +56,15 @@ namespace Test
         private void buttonWork_Click(object sender, EventArgs e)
         {
             controlListOfValues.SetMainLine = textBoxMainString.Text;
-            Class1 cl = new Class1();
-            controlListOfValues.GetPropertyValues(cl);
+            controlListOfValues.GetProperty(cl);
+        }
+
+        private void buttonCH_Click(object sender, EventArgs e)
+        {
+            controlListOfValues.SetChangeValue = textBoxChange.Text;
+            cl = new Class1();
+            cl.SelectedValue = 100;
+            controlListOfValues.ChangeListValue(cl,"SelectedValue",3);
         }
     }
 }

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxValues = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
-            // 
-            // listBoxValues
-            // 
-            this.listBoxValues.FormattingEnabled = true;
-            this.listBoxValues.Location = new System.Drawing.Point(18, 20);
-            this.listBoxValues.Name = "listBoxValues";
-            this.listBoxValues.Size = new System.Drawing.Size(148, 95);
-            this.listBoxValues.TabIndex = 0;
-            // 
-            // ControlListOfValues
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBoxValues);
-            this.Name = "ControlListOfValues";
-            this.Size = new System.Drawing.Size(192, 175);
-            this.ResumeLayout(false);
+			this.listBoxValues = new System.Windows.Forms.ListBox();
+			this.SuspendLayout();
+			// 
+			// listBoxValues
+			// 
+			this.listBoxValues.FormattingEnabled = true;
+			this.listBoxValues.Location = new System.Drawing.Point(18, 20);
+			this.listBoxValues.Name = "listBoxValues";
+			this.listBoxValues.Size = new System.Drawing.Size(233, 108);
+			this.listBoxValues.TabIndex = 0;
+			// 
+			// ControlListOfValues
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.listBoxValues);
+			this.Name = "ControlListOfValues";
+			this.Size = new System.Drawing.Size(254, 192);
+			this.ResumeLayout(false);
 
         }
 

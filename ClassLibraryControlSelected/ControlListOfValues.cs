@@ -16,6 +16,8 @@ namespace ClassLibraryControlSelected
     {
         private string mainLine;
 
+        private string ChangeValue;
+
         private event EventHandler _listBoxSelectedElementChange;
 
         public string SetMainLine
@@ -26,40 +28,86 @@ namespace ClassLibraryControlSelected
             }
         }
 
-        public void GetPropertyValues(Object obj)
+        public string SetChangeValue
         {
-            listBoxValues.Items.Clear();
-            string _work=null;
+            set
+            {
+                ChangeValue = value;
+            }
+        }
+
+        public  void GetProperty(Object obj)
+        {
+            Type t = obj.GetType();
+            string _work = null;
+            List<object> values =new List<object>();
+            PropertyInfo[] props = t.GetProperties();
+            string[] main = mainLine.Split(' ');
+            foreach (string s in main)
+            {
+                foreach (var prop in props)
+                {
+                    if(prop.Name == s)
+                    {
+                        values.Add(prop.GetValue(obj));
+                    }
+                }
+            }
+                _work = mainLine;
+                listBoxValues.Items.Add(_work);
+        }
+
+        //валуе {SelectedValue} индекс {SelectedIndex}
+        public void ChangeListValue(Object obj,String ChangeValue,int Index)
+        {
+            string line = Convert.ToString(listBoxValues.Items[Index]);
+            string[] main = line.Split(' ');
             Type t = obj.GetType();
             PropertyInfo[] props = t.GetProperties();
-            string[] numbers = Regex.Split(mainLine , @"\D+");
-            foreach (string value in numbers)
+            int resultIndex = 0;
+            foreach (var prop in props)
             {
-                if (!string.IsNullOrEmpty(value))
+                //foreach (string s in main)//for
+                for(int i = 0; i<main.Length;i++)
                 {
-                    int i = int.Parse(value);
-                    if (props[i-1].GetIndexParameters().Length == 0)
+                    int start = main[i].IndexOf("{");
+                    int end = main[i].IndexOf("}");
+                    if (start >= 0)
                     {
-                        _work = "{" + props[i-1].Name + "}" + "(" + props[i-1].PropertyType.Name + "): " + "{" + props[i-1].GetValue(obj) + "}";
-                        listBoxValues.Items.Add(_work);
+                        string result = main[i].Substring(start+1 , end-start-1);
+                        if(result == ChangeValue && result == prop.Name)
+                        {
+                            main[i] = Convert.ToString(prop.GetValue(obj));
+                        }
                     }
-                    else
-                        Console.WriteLine("   {0} ({1}): <Indexed>", props[i-1].Name,
-                                          props[1].PropertyType.Name);
                 }
-            }           
+            }
+            listBoxValues.Items[Index] = string.Join(" ", main);
+            //listBoxValues.Items[Index] = "";
+            //List<object> values = new List<object>();
+            //Type t = obj.GetType();
+            //string _work = null;
+            //PropertyInfo[] props = t.GetProperties();
+            //string[] main = mainLine.Split(' ');
+            //int indexLine = 0;
+            //foreach (string s in main)
+            //{
+            //    foreach (var prop in props)
+            //    {
+            //        if (ChangeValue == prop.Name)
+            //        {
+            //            values.Add(prop.GetValue(obj));
+            //        }
+            //    }
+            //}
+            //_work = String.Format(mainLine, values.ToArray());
+            //listBoxValues.Items[Index] = _work;
         }
 
         [Category("Спецификация"), Description("Текст выбранной записи")]
         public string SelectedText
         {
             get { return listBoxValues.Text; }
-        }
-
-        public void SetValue()
-        {
-
-
         }
 
         [Category("Спецификация"), Description("Событие выбора элемента из списка")]

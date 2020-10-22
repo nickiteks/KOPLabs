@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.ListBox;
 
 namespace ClassLibraryControlSelected
 {
@@ -16,13 +17,24 @@ namespace ClassLibraryControlSelected
         /// Порядковый номер выбранного элемента
         /// </summary>
         private int _selectedIndex;
+
+        public ObjectCollection Items 
+        {
+            get
+            {
+                return listBox.Items;
+            } 
+        }
         /// <summary>
         /// Событие выбора элемента из списка
         /// </summary>
         private event EventHandler _listBoxSelectedElementChange;
+
         /// <summary>
         /// Порядковый номер выбранного элемента
         /// </summary>
+        /// 
+
         [Category("Спецификация"), Description("Порядковый номер выбранного элемента")]
         public int SelectedIndex
         {
@@ -62,17 +74,6 @@ namespace ClassLibraryControlSelected
             listBox.SelectedIndexChanged += (sender, e) => {
                 _listBoxSelectedElementChange?.Invoke(sender, e);
             };
-        }
-        /// <summary>
-        /// Заполнение списка значениями из справочника
-        /// </summary>
-        /// <param name="type">тип-справочник</param>
-        public void LoadEnumeration(Type type)
-        {
-            foreach (var elem in Enum.GetValues(type))
-            {
-                listBox.Items.Add(elem.ToString());
-            }
         }
     }
 }

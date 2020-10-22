@@ -13,6 +13,7 @@ namespace ClassLibraryControlSelected
 {
     public partial class ControlPhoneNumberCheck : UserControl
     {
+        string NumberReg = @"[+7|8]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}";
         private Color _сolor;
         private event EventHandler _phoneNumberWrite;
 
@@ -25,6 +26,14 @@ namespace ClassLibraryControlSelected
                 _сolor = value;
             }
         }
+        [Category("Спецификация"), Description("Регулярное выражение")]
+        public string regularValue
+        {
+            set
+            {
+                NumberReg = value;
+            }
+        }
 
         [Category("Спецификация"), Description("Событие ввода номера")]
         public event EventHandler NumberWrite
@@ -33,17 +42,18 @@ namespace ClassLibraryControlSelected
             remove { _phoneNumberWrite -= value; }
         }
 
-        public void CheckNumber()
+        public string GetNumber()
         {
-            string NumberReg = @"[+7|8]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}";
+            
             if (!Regex.IsMatch(textBoxNumber.Text, NumberReg, RegexOptions.IgnoreCase))
             {
                 textBoxNumber.BackColor = _сolor;
+                return "";
             }
             else
             {
                 textBoxNumber.BackColor = Color.White;
-                MessageBox.Show(textBoxNumber.Text);
+                 return textBoxNumber.Text;
             }
         }
 
