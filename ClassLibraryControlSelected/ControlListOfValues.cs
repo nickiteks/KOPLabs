@@ -56,7 +56,7 @@ namespace ClassLibraryControlSelected
                 _work = mainLine;
                 listBoxValues.Items.Add(_work);
         }
-
+        //example
         //валуе {SelectedValue} индекс {SelectedIndex}
         public void ChangeListValue(Object obj,String ChangeValue,int Index)
         {
@@ -67,7 +67,6 @@ namespace ClassLibraryControlSelected
             int resultIndex = 0;
             foreach (var prop in props)
             {
-                //foreach (string s in main)//for
                 for(int i = 0; i<main.Length;i++)
                 {
                     int start = main[i].IndexOf("{");
@@ -83,25 +82,6 @@ namespace ClassLibraryControlSelected
                 }
             }
             listBoxValues.Items[Index] = string.Join(" ", main);
-            //listBoxValues.Items[Index] = "";
-            //List<object> values = new List<object>();
-            //Type t = obj.GetType();
-            //string _work = null;
-            //PropertyInfo[] props = t.GetProperties();
-            //string[] main = mainLine.Split(' ');
-            //int indexLine = 0;
-            //foreach (string s in main)
-            //{
-            //    foreach (var prop in props)
-            //    {
-            //        if (ChangeValue == prop.Name)
-            //        {
-            //            values.Add(prop.GetValue(obj));
-            //        }
-            //    }
-            //}
-            //_work = String.Format(mainLine, values.ToArray());
-            //listBoxValues.Items[Index] = _work;
         }
 
         [Category("Спецификация"), Description("Текст выбранной записи")]
