@@ -28,8 +28,8 @@ namespace View
         private void FormMain_Load(object sender, EventArgs e)
         {
             var unit = unitLogic.Read(null);
-            userControlListOutput1.SetOrder(new string[] { "Name", "DateReport", "typeOrganization" });
-            userControlListOutput1.AddAll(unit);
+            userControlListOutput.SetOrder(new string[] { "Name", "DateReport", "typeOrganization"});
+            userControlListOutput.AddAll(unit);
         }
 
         private void buttonWord_Click(object sender, EventArgs e)
@@ -99,8 +99,8 @@ namespace View
             var form = Container.Resolve<FormCreateOraganizationUnit>();
             form.ShowDialog();
             var unit = unitLogic.Read(null);
-            userControlListOutput1.SetOrder(new string[] { "Name", "DateReport", "typeOrganization" });
-            userControlListOutput1.AddAll(unit);
+            userControlListOutput.SetOrder(new string[] { "Name", "DateReport", "typeOrganization" });
+            userControlListOutput.AddAll(unit);
         }
     }
 }

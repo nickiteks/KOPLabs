@@ -34,7 +34,7 @@ namespace View
             this.components = new System.ComponentModel.Container();
             this.buttonWord = new System.Windows.Forms.Button();
             this.buttonBackup = new System.Windows.Forms.Button();
-            this.userControlListOutput1 = new Var35n6n18n27.UserControlListOutput();
+            this.userControlListOutput = new Var35n6n18n27.UserControlListOutput();
             this.componentWordSummary = new components.ComponentWordSummary(this.components);
             this.backupComponent = new components.BackupComponent(this.components);
             this.wordDiagram = new KDAkop.WordDiagram(this.components);
@@ -66,10 +66,10 @@ namespace View
             // 
             // userControlListOutput1
             // 
-            this.userControlListOutput1.Location = new System.Drawing.Point(12, 36);
-            this.userControlListOutput1.Name = "userControlListOutput1";
-            this.userControlListOutput1.Size = new System.Drawing.Size(150, 150);
-            this.userControlListOutput1.TabIndex = 2;
+            this.userControlListOutput.Location = new System.Drawing.Point(12, 36);
+            this.userControlListOutput.Name = "userControlListOutput1";
+            this.userControlListOutput.Size = new System.Drawing.Size(150, 150);
+            this.userControlListOutput.TabIndex = 2;
             // 
             // buttonWordDiagramm
             // 
@@ -106,7 +106,7 @@ namespace View
             this.Controls.Add(this.buttonWordDiagramm);
             this.Controls.Add(this.buttonBackup);
             this.Controls.Add(this.buttonWord);
-            this.Controls.Add(this.userControlListOutput1);
+            this.Controls.Add(this.userControlListOutput);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
@@ -120,7 +120,7 @@ namespace View
         }
 
         #endregion
-        private UserControlListOutput userControlListOutput1;
+        private UserControlListOutput userControlListOutput;
         private components.ComponentWordSummary componentWordSummary;
         private System.Windows.Forms.Button buttonWord;
         private components.BackupComponent backupComponent;

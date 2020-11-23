@@ -85,4 +85,3 @@ C:\Users\NULS\Desktop\KOPLabs_3\MainLogic\obj\Debug\MainLogic.csproj.CoreCompile
 C:\Users\NULS\Desktop\KOPLabs_3\MainLogic\obj\Debug\MainLogic.csproj.CopyComplete
 C:\Users\NULS\Desktop\KOPLabs_3\MainLogic\obj\Debug\MainLogic.dll
 C:\Users\NULS\Desktop\KOPLabs_3\MainLogic\obj\Debug\MainLogic.pdb
-C:\Users\NULS\Desktop\KOPLabs_3\MainLogic\obj\Debug\MainLogic.csprojAssemblyReference.cache

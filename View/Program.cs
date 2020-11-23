@@ -1,4 +1,5 @@
 ﻿using MainLogic.Logic;
+using Patterns.FabricClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace View
         {
             var currentContainer = new UnityContainer();
             currentContainer.RegisterType<IOrganizationUnitLogic, OrganizationUnitLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<UnitFactory>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }
